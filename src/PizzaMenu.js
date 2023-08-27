@@ -7,8 +7,9 @@ const PizzaMenu = ({pizzaData}) => {
     <main className='mainPizza'>
         <ul className="pizzas">
             {pizzas.map((pizza) => (
-              <li className='list'>
+              <li className='list' key={pizza.name}>
                 <table>
+                  <tbody>
                   <tr>
                     <td>
                     <img className={pizza.soldOut ? 'pizzaImages sold-out' : 'pizzaImages'} src={pizza.photoName} alt={pizza.name}/>
@@ -21,6 +22,7 @@ const PizzaMenu = ({pizzaData}) => {
                 </div>
                     </td>
                   </tr>
+                  </tbody>
                 </table>
               </li>
             ))}
